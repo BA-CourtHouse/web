@@ -28,7 +28,7 @@ const AssessmentPage = () => {
         e.preventDefault();
         if (validateForm()) {
             try {
-                const res = await fetch("https://ba-court-house.onrender.com/api/assessment", {
+                const res = await fetch("https://web-j2qz.onrender.com/api/assessment", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

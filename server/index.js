@@ -26,6 +26,6 @@ mongoose.connect(process.env.MONGO_URI)
   
 
   app.use(cors({
-    origin: 'https://ba-court-house.onrender.com',
+    origin: app.listen(process.env.PORT || 5000),
     credentials: true
   }));
