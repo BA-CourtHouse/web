@@ -44,32 +44,27 @@ const Footer = () => {
               </a>
               
               <a 
-                href="https://www.facebook.com/profile.php?id=61578855478420"  
+                href=" https://www.youtube.com/@bacourthouse" 
                 className="text-blue-100 hover:text-orange-300 transition-colors"
                 aria-label="Facebook"
               >
-                <FaFacebook className="h-6 w-6" />
+                <FaYoutube className="h-6 w-6" />
               </a>
               
               <a 
-                href="https://www.instagram.com/bacourthouse/"  
+                href="https://www.instagram.com/bacourthouse/"            
                 className="text-blue-100 hover:text-orange-300 transition-colors"
                 aria-label="Instagram"
               >
                 <FaInstagram className="h-6 w-6" />
               </a>
 
-              <a href="http://www.youtube.com/@flowlexx"
-                className="text-blue-100 hover:text-orange-300 transition-colors"
-                aria-label='Youtube'
-              >
-                <FaYoutube className="h-6 w-6" />
-              </a>
-              <a href=""
+              
+              <a href="https://www.facebook.com/profile.php?id=61578855478420"
                 className="text-blue-100 hover:text-orange-300 transition-colors"
                 aria-label='X'
               >
-                <FaTwitter className="h-6 w-6" />
+                <FaFacebook className="h-6 w-6" />
               </a>
             </div>
           </div>

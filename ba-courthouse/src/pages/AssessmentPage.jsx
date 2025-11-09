@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { FaCheckCircle, FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { FaCheckCircle, FaArrowRight, FaArrowLeft, FaSpinner  } from "react-icons/fa";
 
 const AssessmentPage = () => {
     const { service } = useParams();
@@ -15,6 +15,7 @@ const AssessmentPage = () => {
     const [submitted, setSubmitted] = useState(false);
     const [currentStep, setCurrentStep] = useState(1);
     const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,7 +27,9 @@ const AssessmentPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+       
         if (validateForm()) {
+            setIsSubmitting(true); // Start loading
             try {
                 const res = await fetch("https://web-j2qz.onrender.com/api/assessment", {
                     method: "POST",
@@ -41,10 +44,11 @@ const AssessmentPage = () => {
                 }
             } catch (err) {
                 console.error("Submission failed", err);
+            } finally {
+                setIsSubmitting(false); // Stop loading regardless of outcome
             }
         }
     };
-
     const nextStep = () => {
         if (validateStep()) {
             setCurrentStep(currentStep + 1);
@@ -121,6 +125,9 @@ const AssessmentPage = () => {
         setErrors(newErrors);
         return isValid;
     };
+
+    
+    
 
     if (submitted) {
         return (
@@ -272,9 +279,14 @@ const AssessmentPage = () => {
                         ) : (
                             <button
                                 type="submit"
-                                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                                className="flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 min-w-24"
+                                disabled={isSubmitting}
                             >
-                                Submit
+                                {isSubmitting ? (
+                                    <FaSpinner className="animate-spin" />
+                                ) : (
+                                    "Submit"
+                                )}
                             </button>
                         )}
                     </div>

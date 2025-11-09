@@ -66,7 +66,7 @@ const ContactSection = () => {
     setSubscribeStatus(null);
   
     try {
-      const res = await axios.post("https://ba-court-house.onrender.com/api/subscribe", subscribeData);
+      const res = await axios.post("https://web-j2qz.onrender.com/api/subscribe", subscribeData);
       setSubscribeStatus({ success: true, message: res.data.message });
       setSubscribeData({ name: '', email: '' });
     } catch (err) {

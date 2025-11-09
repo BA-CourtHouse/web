@@ -123,7 +123,7 @@ const HeroSection = () => {
                 className="inline-block bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent"
                 whileHover={{ scale: 1.02 }}
               >
-                With Strateic Consulting & Agile Transformation
+                With Strategic Consulting & Agile Transformation
               </motion.span>
             </motion.h1>
             

@@ -17,8 +17,8 @@ import CaseStudies from "../pages/CaseStudies";
 import SoftwareDevelopmentPage from "../pages/Software";
 import ResearchSolutionDevelopmentPage from "../pages/Research";
 import ManagementConsultingPage from "../pages/ManagementConsulting";
-import WhatsAppCTA from "../components/FloatingWhatsApp";
 import AssessmentPage from "../pages/AssessmentPage";
+import EmbeddedChatCTA from "../components/FloatingWhatsApp";
 
 
 // ... import the rest
@@ -27,7 +27,7 @@ export default function AppRouter() {
   return (
     <BrowserRouter>
     <Navbar/>
-    <WhatsAppCTA/>
+    <EmbeddedChatCTA/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
